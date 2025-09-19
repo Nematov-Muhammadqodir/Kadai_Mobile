@@ -1,15 +1,15 @@
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, Pressable } from "react-native";
 import EvilIcons from "@expo/vector-icons/EvilIcons";
 import Colors from "../../constants/colors";
 
 export default function SearchButton() {
   return (
-    <View style={styles.mainContainer}>
+    <Pressable style={styles.mainContainer}>
       <View style={styles.textContainer}>
         <Text style={styles.text}>Search</Text>
         <EvilIcons name="search" size={24} color="black" />
       </View>
-    </View>
+    </Pressable>
   );
 }
 

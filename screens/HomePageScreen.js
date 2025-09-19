@@ -3,6 +3,7 @@ import SaleSmallBanner from "../components/homePage/SaleSmallBanner";
 import Logo from "../components/general/Logo";
 import SearchInput from "../components/homePage/SearchInput";
 import Routes from "../components/homePage/Routes";
+import SmallAddBanner from "../components/homePage/SmallAddBanner";
 
 export default function HomePageScreen() {
   return (
@@ -11,6 +12,7 @@ export default function HomePageScreen() {
       <Logo />
       <SearchInput />
       <Routes />
+      <SmallAddBanner />
     </View>
   );
 }

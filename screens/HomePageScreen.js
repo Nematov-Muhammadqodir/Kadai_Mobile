@@ -6,6 +6,7 @@ import Routes from "../components/homePage/Routes";
 import SmallAddBanner from "../components/homePage/SmallAddBanner";
 import BigBanner from "../components/homePage/BigBanner";
 import Categories from "../components/homePage/Categories";
+import DiscountProductsList from "../components/homePage/DiscountProductsList";
 
 export default function HomePageScreen() {
   const components = [
@@ -16,6 +17,7 @@ export default function HomePageScreen() {
     <SmallAddBanner key="smallAdd" />,
     <BigBanner key="big" />,
     <Categories key="categories" />,
+    <DiscountProductsList />,
   ];
 
   return (

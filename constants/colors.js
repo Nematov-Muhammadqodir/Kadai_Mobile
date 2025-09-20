@@ -4,5 +4,7 @@ const Colors = {
   yellowPrimary: "#FFD700",
   yellowSecondary: "#FED700",
   grayPrimary: "#EAEEEA",
+  addToCartMain: "#E0EDFF",
+  addToCartSecondary: "#B9D4FF",
 };
 export default Colors;

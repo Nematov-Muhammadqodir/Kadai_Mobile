@@ -7,6 +7,7 @@ import SmallAddBanner from "../components/homePage/SmallAddBanner";
 import BigBanner from "../components/homePage/BigBanner";
 import Categories from "../components/homePage/Categories";
 import DiscountProductsList from "../components/homePage/DiscountProductsList";
+import Footer from "../components/general/Footer";
 
 export default function HomePageScreen() {
   const components = [
@@ -18,6 +19,7 @@ export default function HomePageScreen() {
     <BigBanner key="big" />,
     <Categories key="categories" />,
     <DiscountProductsList />,
+    <Footer key="footer" />,
   ];
 
   return (
@@ -32,6 +34,6 @@ export default function HomePageScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingBottom: 20, // optional: adds space at bottom for scrolling
+    // paddingBottom: 20, // optional: adds space at bottom for scrolling
   },
 });

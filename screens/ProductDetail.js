@@ -1,17 +1,14 @@
 import { FlatList, View, StyleSheet, Text } from "react-native";
 import SaleSmallBanner from "../components/homePage/SaleSmallBanner";
 import Logo from "../components/general/Logo";
-import SearchInput from "../components/homePage/SearchInput";
 import Routes from "../components/homePage/Routes";
 import SmallAddBanner from "../components/homePage/SmallAddBanner";
-import Categories from "../components/homePage/Categories";
-import DiscountProductsList from "../components/homePage/DiscountProductsList";
 import Footer from "../components/general/Footer";
 import BlogsList from "../components/homePage/BlogsList";
-import NewProductsList from "../components/homePage/NewProductsList";
 import ProductDetailBigBanner from "../components/productDetail/ProductDetailBigBanner";
 import ProductInfo from "../components/productDetail/ProductInfo";
 import AddProduct from "../components/productDetail/AddProduct";
+import DeliveryReturn from "../components/productDetail/Delivery&Return";
 
 export default function ProductDetail({ handleRouter }) {
   const components = [
@@ -22,6 +19,7 @@ export default function ProductDetail({ handleRouter }) {
     <ProductDetailBigBanner />,
     <ProductInfo key={"productInfo"} />,
     <AddProduct />,
+    <DeliveryReturn />,
     <BlogsList key="blogs" />,
     <Footer key="footer" />,
   ];

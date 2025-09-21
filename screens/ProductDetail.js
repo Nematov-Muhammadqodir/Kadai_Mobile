@@ -9,14 +9,13 @@ import DiscountProductsList from "../components/homePage/DiscountProductsList";
 import Footer from "../components/general/Footer";
 import BlogsList from "../components/homePage/BlogsList";
 import NewProductsList from "../components/homePage/NewProductsList";
-import ProductDetailBigBanner from "../components/productDetail/BigBanner";
+import ProductDetailBigBanner from "../components/productDetail/ProductDetailBigBanner";
 
-export default function ProductDetail() {
+export default function ProductDetail({ handleRouter }) {
   const components = [
     <SaleSmallBanner key="sale" />,
     <Logo key="logo" />,
-    // <SearchInput key="search" />,
-    <Routes key="routes" />,
+    <Routes key="routes" handleRouter={handleRouter} />,
     <SmallAddBanner key="smallAdd" />,
     <ProductDetailBigBanner />,
     <BlogsList key="blogs" />,

@@ -11,12 +11,12 @@ import Footer from "../components/general/Footer";
 import BlogsList from "../components/homePage/BlogsList";
 import NewProductsList from "../components/homePage/NewProductsList";
 
-export default function HomePageScreen({ handleProductDetail }) {
+export default function HomePageScreen({ handleProductDetail, handleRouter }) {
   const components = [
     <SaleSmallBanner key="sale" />,
     <Logo key="logo" />,
     <SearchInput key="search" />,
-    <Routes key="routes" />,
+    <Routes key="routes" handleRouter={handleRouter} />,
     <SmallAddBanner key="smallAdd" />,
     <BigBanner key="big" />,
     <Categories key="categories" />,

@@ -8,18 +8,38 @@ import ProductDetail from "./screens/ProductDetail";
 
 export default function App() {
   const [productId, setProductDetailId] = useState("");
+  const [page, setPage] = useState("home");
   const [fontsLoaded] = useFonts({
     "open-sans": require("./assets/fonts/OpenSans-Regular.ttf"),
     "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
   });
   const handleProductDetail = (id) => {
     setProductDetailId(id);
+    setPage("productDetail");
   };
 
-  let screen = <HomePageScreen handleProductDetail={handleProductDetail} />;
+  const handleRouter = (page) => {
+    setPage(page);
+  };
 
-  if (productId !== "") {
-    screen = <ProductDetail />;
+  let screen = (
+    <HomePageScreen
+      handleProductDetail={handleProductDetail}
+      handleRouter={handleRouter}
+    />
+  );
+
+  if (page === "home") {
+    screen = (
+      <HomePageScreen
+        handleProductDetail={handleProductDetail}
+        handleRouter={handleRouter}
+      />
+    );
+  }
+
+  if (productId !== "" && page === "productDetail") {
+    screen = <ProductDetail handleRouter={handleRouter} />;
   }
   if (!fontsLoaded) {
     return <AppLoading />;

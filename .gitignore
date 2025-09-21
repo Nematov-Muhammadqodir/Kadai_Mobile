@@ -3,6 +3,8 @@
 # dependencies
 node_modules/
 
+assets/images
+
 # Expo
 .expo/
 dist/

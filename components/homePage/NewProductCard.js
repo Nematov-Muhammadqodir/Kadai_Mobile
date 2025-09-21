@@ -7,7 +7,7 @@ export default function NewProductCard({ item }) {
     <View key={item.name} style={styles.mainContainer}>
       <View style={styles.imageContainer}>
         <Image
-          source={require("../../assets/images/products/melon.png")}
+          source={require("../../assets/images/products/grape_PhotoGrid-min.png")}
           style={styles.image}
         />
       </View>

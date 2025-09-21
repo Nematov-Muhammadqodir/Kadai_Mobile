@@ -18,22 +18,22 @@ const DATA = [
   {
     id: "1",
     name: "Item 1",
-    image: require("../../assets/images/products/eggs_PhotoGrid.png"),
+    image: require("../../assets/images/products/eggs_PhotoGrid-min.png"),
   },
   {
     id: "2",
     name: "Item 2",
-    image: require("../../assets/images/products/grape_PhotoGrid.png"),
+    image: require("../../assets/images/products/grape_PhotoGrid-min.png"),
   },
   {
     id: "3",
     name: "Item 3",
-    image: require("../../assets/images/products/Garlic_PhotoGrid.png"),
+    image: require("../../assets/images/products/Garlic_PhotoGrid-min.png"),
   },
   {
     id: "4",
     name: "Item 4",
-    image: require("../../assets/images/products/kiwi_PhotoGrid.png"),
+    image: require("../../assets/images/products/kiwi_PhotoGrid-min.png"),
   },
 ];
 

@@ -1,6 +1,6 @@
 import { Button, Pressable, Text, View, StyleSheet } from "react-native";
 
-export default function Routes() {
+export default function Routes({ handleRouter }) {
   return (
     <View style={styles.mainContainer}>
       <View>
@@ -11,6 +11,7 @@ export default function Routes() {
             },
             styles.wrapperCustom,
           ]}
+          onPress={() => handleRouter("home")}
         >
           <Text>Home</Text>
         </Pressable>
@@ -23,6 +24,7 @@ export default function Routes() {
             },
             styles.wrapperCustom,
           ]}
+          onPress={() => handleRouter("aboutUs")}
         >
           <Text>About Us</Text>
         </Pressable>
@@ -35,6 +37,7 @@ export default function Routes() {
             },
             styles.wrapperCustom,
           ]}
+          onPress={() => handleRouter("blogs")}
         >
           <Text>Blogs</Text>
         </Pressable>
@@ -47,6 +50,7 @@ export default function Routes() {
             },
             styles.wrapperCustom,
           ]}
+          onPress={() => handleRouter("faq")}
         >
           <Text>FAQ</Text>
         </Pressable>
@@ -59,6 +63,7 @@ export default function Routes() {
             },
             styles.wrapperCustom,
           ]}
+          onPress={() => handleRouter("chat")}
         >
           <Text>Chat</Text>
         </Pressable>

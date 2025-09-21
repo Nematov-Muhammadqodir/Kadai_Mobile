@@ -9,6 +9,7 @@ import Categories from "../components/homePage/Categories";
 import DiscountProductsList from "../components/homePage/DiscountProductsList";
 import Footer from "../components/general/Footer";
 import BlogsList from "../components/homePage/BlogsList";
+import NewProductsList from "../components/homePage/NewProductsList";
 
 export default function HomePageScreen() {
   const components = [
@@ -19,7 +20,8 @@ export default function HomePageScreen() {
     <SmallAddBanner key="smallAdd" />,
     <BigBanner key="big" />,
     <Categories key="categories" />,
-    <DiscountProductsList />,
+    <DiscountProductsList key="discountProductsList" />,
+    <NewProductsList key="newProductsList" />,
     <BlogsList key="blogs" />,
     <Footer key="footer" />,
   ];

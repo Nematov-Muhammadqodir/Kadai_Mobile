@@ -12,8 +12,6 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 import CardDesc from "../general/CardDesc";
 
-const { width } = Dimensions.get("window");
-
 const DATA = [
   {
     id: "1",

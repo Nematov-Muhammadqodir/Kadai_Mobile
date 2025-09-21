@@ -7,10 +7,12 @@ import {
   StyleSheet,
   Dimensions,
   Image,
+  Pressable,
 } from "react-native";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 import CardDesc from "../general/CardDesc";
+import Colors from "../../constants/colors";
 
 const DATA = [
   {
@@ -35,7 +37,7 @@ const DATA = [
   },
 ];
 
-export default function DiscountProductsList() {
+export default function DiscountProductsList({ handleProductDetail }) {
   const flatListRef = useRef();
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -54,7 +56,10 @@ export default function DiscountProductsList() {
   };
 
   const renderItem = ({ item }) => (
-    <View style={[styles.item]}>
+    <Pressable
+      style={({ pressed }) => [styles.item, pressed && styles.btnPressed]}
+      onPress={() => handleProductDetail(item.id)}
+    >
       <View style={styles.imageContainer}>
         <Image
           source={item.image}
@@ -62,7 +67,7 @@ export default function DiscountProductsList() {
         />
       </View>
       <CardDesc />
-    </View>
+    </Pressable>
   );
 
   return (
@@ -130,5 +135,8 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     backgroundColor: "#f4f4f4",
+  },
+  btnPressed: {
+    transform: [{ scale: 0.97 }],
   },
 });

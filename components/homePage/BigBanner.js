@@ -11,7 +11,7 @@ export default function BigBanner() {
         <Text style={styles.desc}>
           Shop smarter, eat fresher – groceries just a tap away.
         </Text>
-        <ShopNowBtn />
+        <ShopNowBtn text={"Shop Now"} />
       </View>
       <Image
         style={styles.image}

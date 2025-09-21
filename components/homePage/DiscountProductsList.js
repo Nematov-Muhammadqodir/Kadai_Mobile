@@ -68,33 +68,47 @@ export default function DiscountProductsList() {
   );
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={goPrev} style={styles.arrow}>
-        <MaterialIcons name="keyboard-arrow-left" size={22} color="black" />
-      </TouchableOpacity>
+    <View style={styles.mainContainer}>
+      <Text style={styles.header}>Discounted Products</Text>
+      <View style={styles.container}>
+        <TouchableOpacity onPress={goPrev} style={styles.arrow}>
+          <MaterialIcons name="keyboard-arrow-left" size={22} color="black" />
+        </TouchableOpacity>
 
-      <FlatList
-        ref={flatListRef}
-        data={DATA}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-        horizontal
-        pagingEnabled
-        showsHorizontalScrollIndicator={false}
-      />
+        <FlatList
+          ref={flatListRef}
+          data={DATA}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+          horizontal
+          pagingEnabled
+          showsHorizontalScrollIndicator={false}
+        />
 
-      <TouchableOpacity onPress={goNext} style={styles.arrow}>
-        <MaterialIcons name="keyboard-arrow-right" size={22} color="black" />
-      </TouchableOpacity>
+        <TouchableOpacity onPress={goNext} style={styles.arrow}>
+          <MaterialIcons name="keyboard-arrow-right" size={22} color="black" />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  mainContainer: {
+    marginTop: 50,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  header: {
+    fontFamily: "open-sans-bold",
+    fontSize: 16,
+    marginLeft: 10,
+    marginTop: 20,
+  },
   container: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 50,
+    marginTop: 20,
   },
   arrow: {
     padding: 10,

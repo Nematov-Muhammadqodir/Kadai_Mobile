@@ -8,6 +8,7 @@ import BigBanner from "../components/homePage/BigBanner";
 import Categories from "../components/homePage/Categories";
 import DiscountProductsList from "../components/homePage/DiscountProductsList";
 import Footer from "../components/general/Footer";
+import BlogsList from "../components/homePage/BlogsList";
 
 export default function HomePageScreen() {
   const components = [
@@ -19,6 +20,7 @@ export default function HomePageScreen() {
     <BigBanner key="big" />,
     <Categories key="categories" />,
     <DiscountProductsList />,
+    <BlogsList key="blogs" />,
     <Footer key="footer" />,
   ];
 

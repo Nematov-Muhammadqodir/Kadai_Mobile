@@ -3,7 +3,7 @@
 # dependencies
 node_modules/
 
-assets/images
+assets/
 
 # Expo
 .expo/

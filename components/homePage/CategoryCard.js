@@ -3,7 +3,7 @@ import Colors from "../../constants/colors";
 
 export default function CategoryCard({ id, name, icon }) {
   return (
-    <View style={styles.category} key={id}>
+    <View style={styles.category}>
       <View style={styles.categoryImage}>
         <Text>{icon}</Text>
       </View>

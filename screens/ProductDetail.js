@@ -10,6 +10,7 @@ import Footer from "../components/general/Footer";
 import BlogsList from "../components/homePage/BlogsList";
 import NewProductsList from "../components/homePage/NewProductsList";
 import ProductDetailBigBanner from "../components/productDetail/ProductDetailBigBanner";
+import ProductInfo from "../components/productDetail/ProductInfo";
 
 export default function ProductDetail({ handleRouter }) {
   const components = [
@@ -18,6 +19,7 @@ export default function ProductDetail({ handleRouter }) {
     <Routes key="routes" handleRouter={handleRouter} />,
     <SmallAddBanner key="smallAdd" />,
     <ProductDetailBigBanner />,
+    <ProductInfo key={"productInfo"} />,
     <BlogsList key="blogs" />,
     <Footer key="footer" />,
   ];

@@ -10,6 +10,9 @@ import ProductInfo from "../components/productDetail/ProductInfo";
 import AddProduct from "../components/productDetail/AddProduct";
 import DeliveryReturn from "../components/productDetail/Delivery&Return";
 import ReviewsList from "../components/productDetail/ReviewsList";
+import LeaveReview from "../components/productDetail/LeaveReview";
+import { LinearGradient } from "react-native-svg";
+import HorizontalLine from "../components/general/HorizontalLine";
 
 export default function ProductDetail({ handleRouter }) {
   const components = [
@@ -17,11 +20,12 @@ export default function ProductDetail({ handleRouter }) {
     <Logo key="logo" />,
     <Routes key="routes" handleRouter={handleRouter} />,
     <SmallAddBanner key="smallAdd" />,
-    <ProductDetailBigBanner />,
+    <ProductDetailBigBanner key={"productDetailBigBanner"} />,
     <ProductInfo key={"productInfo"} />,
-    <AddProduct />,
-    <DeliveryReturn />,
-    <ReviewsList />,
+    <AddProduct key={"addProduct"} />,
+    <DeliveryReturn key={"deliveryReturn"} />,
+    <ReviewsList key={"reviewsList"} />,
+    <LeaveReview key={"leaveReview"} />,
     <BlogsList key="blogs" />,
     <Footer key="footer" />,
   ];

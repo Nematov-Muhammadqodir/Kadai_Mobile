@@ -9,6 +9,7 @@ import ProductDetailBigBanner from "../components/productDetail/ProductDetailBig
 import ProductInfo from "../components/productDetail/ProductInfo";
 import AddProduct from "../components/productDetail/AddProduct";
 import DeliveryReturn from "../components/productDetail/Delivery&Return";
+import ReviewsList from "../components/productDetail/ReviewsList";
 
 export default function ProductDetail({ handleRouter }) {
   const components = [
@@ -20,6 +21,7 @@ export default function ProductDetail({ handleRouter }) {
     <ProductInfo key={"productInfo"} />,
     <AddProduct />,
     <DeliveryReturn />,
+    <ReviewsList />,
     <BlogsList key="blogs" />,
     <Footer key="footer" />,
   ];

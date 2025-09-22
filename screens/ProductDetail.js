@@ -14,6 +14,7 @@ import LeaveReview from "../components/productDetail/LeaveReview";
 import { LinearGradient } from "react-native-svg";
 import HorizontalLine from "../components/general/HorizontalLine";
 import RecommendationBanner from "../components/productDetail/RecommendationBanner";
+import RecommendedProducts from "../components/productDetail/RecommendedProducts";
 
 export default function ProductDetail({ handleRouter }) {
   const components = [
@@ -28,6 +29,7 @@ export default function ProductDetail({ handleRouter }) {
     <ReviewsList key={"reviewsList"} />,
     <LeaveReview key={"leaveReview"} />,
     <RecommendationBanner key={"recommendationBanner"} />,
+    <RecommendedProducts key={"recommendedProducts"} />,
     <BlogsList key="blogs" />,
     <Footer key="footer" />,
   ];

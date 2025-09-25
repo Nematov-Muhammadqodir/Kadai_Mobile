@@ -5,6 +5,7 @@ import AppLoading from "expo-app-loading";
 import { useFonts } from "expo-font";
 import { useState } from "react";
 import ProductDetail from "./screens/ProductDetail";
+import AboutUsScreen from "./screens/AboutUsScreen";
 
 export default function App() {
   const [productId, setProductDetailId] = useState("");
@@ -36,6 +37,9 @@ export default function App() {
         handleRouter={handleRouter}
       />
     );
+  }
+  if (page === "aboutUs") {
+    screen = <AboutUsScreen handleRouter={handleRouter} />;
   }
 
   if (productId !== "" && page === "productDetail") {

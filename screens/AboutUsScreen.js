@@ -10,6 +10,11 @@ import MultipleBanner from "../components/AboutUs/MultipleBanner";
 import OurStories from "../components/AboutUs/OurStories";
 import OurGoal from "../components/AboutUs/OurGoal";
 import MissionList from "../components/AboutUs/MissionList";
+import HowWeWorkBanner from "../components/AboutUs/HowWeWorkBanner";
+import HowWeWorkText from "../components/AboutUs/HowWeWorkText";
+import Experience from "../components/AboutUs/Experience";
+import HorizontalLine from "../components/general/HorizontalLine";
+import BrandSwiper from "../components/AboutUs/BrandSwiper";
 
 export default function AboutUsScreen({ handleRouter }) {
   const components = [
@@ -20,7 +25,13 @@ export default function AboutUsScreen({ handleRouter }) {
     <SmallAboutUsBanner key={"SmallAboutUsBanner"} />,
     <OurStories key={"OurStories"} />,
     <MultipleBanner key={"MultipleBanner"} />,
-    <MissionList />,
+    <MissionList key={"MissionList"} />,
+    <HowWeWorkBanner key={"HowWeWorkBanner"} />,
+    <HorizontalLine />,
+    <HowWeWorkText key={"HowWeWorkText"} />,
+    <Experience />,
+    <HorizontalLine />,
+    <BrandSwiper />,
     <Footer key="footer" />,
   ];
 

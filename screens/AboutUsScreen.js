@@ -6,6 +6,7 @@ import SmallAddBanner from "../components/homePage/SmallAddBanner";
 import Footer from "../components/general/Footer";
 import BlogsList from "../components/homePage/BlogsList";
 import SmallAboutUsBanner from "../components/AboutUs/SmallAboutUsBanner";
+import MultipleBanner from "../components/AboutUs/MultipleBanner";
 export default function AboutUsScreen({ handleRouter }) {
   const components = [
     <SaleSmallBanner key="sale" />,
@@ -13,6 +14,7 @@ export default function AboutUsScreen({ handleRouter }) {
     <Routes key="routes" handleRouter={handleRouter} />,
     <SmallAddBanner key="smallAdd" />,
     <SmallAboutUsBanner />,
+    <MultipleBanner />,
     <Footer key="footer" />,
   ];
 

@@ -9,5 +9,6 @@ const Colors = {
   addToCartSecondary: "#B9D4FF",
   discountRedColor: "#F00",
   nosRangKok: "#3C4701",
+  skinColor: "#FFE8D2",
 };
 export default Colors;

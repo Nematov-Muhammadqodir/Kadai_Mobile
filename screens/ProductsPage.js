@@ -11,16 +11,16 @@ import Footer from "../components/general/Footer";
 import BlogsList from "../components/homePage/BlogsList";
 import NewProductsList from "../components/homePage/NewProductsList";
 import CountdownTimer from "../components/general/CountDownTimer";
+import ProductsBigBanner from "../components/products/ProductsBigBanner";
 
 export default function ProductsPage({ handleRouter }) {
   const components = [
     <SaleSmallBanner key="sale" />,
     <CountdownTimer />,
     <Logo key="logo" handleRouter={handleRouter} />,
-    <SearchInput key="search" />,
     <Routes key="routes" handleRouter={handleRouter} />,
     <SmallAddBanner key="smallAdd" />,
-
+    <ProductsBigBanner />,
     <BlogsList key="blogs" />,
     <Footer key="footer" />,
   ];

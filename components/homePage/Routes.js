@@ -1,4 +1,6 @@
 import { Pressable, Text, View, StyleSheet } from "react-native";
+import Octicons from "@expo/vector-icons/Octicons";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 export default function Routes({ handleRouter }) {
   return (
@@ -13,7 +15,20 @@ export default function Routes({ handleRouter }) {
           ]}
           onPress={() => handleRouter("home")}
         >
-          <Text>Home</Text>
+          <Octicons name="home-fill" size={24} color="green" />
+        </Pressable>
+      </View>
+      <View>
+        <Pressable
+          style={({ pressed }) => [
+            {
+              backgroundColor: pressed ? "rgba(4, 75, 63, 0.38)" : "white",
+            },
+            styles.wrapperCustom,
+          ]}
+          onPress={() => handleRouter("chat")}
+        >
+          <Text>MyPage</Text>
         </Pressable>
       </View>
       <View>
@@ -52,20 +67,7 @@ export default function Routes({ handleRouter }) {
           ]}
           onPress={() => handleRouter("faq")}
         >
-          <Text>FAQ</Text>
-        </Pressable>
-      </View>
-      <View>
-        <Pressable
-          style={({ pressed }) => [
-            {
-              backgroundColor: pressed ? "rgba(4, 75, 63, 0.38)" : "white",
-            },
-            styles.wrapperCustom,
-          ]}
-          onPress={() => handleRouter("chat")}
-        >
-          <Text>Chat</Text>
+          <FontAwesome name="question-circle" size={24} color="red" />
         </Pressable>
       </View>
     </View>

@@ -14,7 +14,7 @@ import NewProductsList from "../components/homePage/NewProductsList";
 export default function HomePageScreen({ handleProductDetail, handleRouter }) {
   const components = [
     <SaleSmallBanner key="sale" />,
-    <Logo key="logo" />,
+    <Logo key="logo" handleRouter={handleRouter} />,
     <SearchInput key="search" />,
     <Routes key="routes" handleRouter={handleRouter} />,
     <SmallAddBanner key="smallAdd" />,

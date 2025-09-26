@@ -26,6 +26,19 @@ export default function Routes({ handleRouter }) {
             },
             styles.wrapperCustom,
           ]}
+          onPress={() => handleRouter("products")}
+        >
+          <Text>Products</Text>
+        </Pressable>
+      </View>
+      <View>
+        <Pressable
+          style={({ pressed }) => [
+            {
+              backgroundColor: pressed ? "rgba(4, 75, 63, 0.38)" : "white",
+            },
+            styles.wrapperCustom,
+          ]}
           onPress={() => handleRouter("chat")}
         >
           <Text>MyPage</Text>
@@ -80,7 +93,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     marginTop: 10,
-    width: 303,
+    width: 333,
     alignSelf: "center",
   },
   routeText: {},

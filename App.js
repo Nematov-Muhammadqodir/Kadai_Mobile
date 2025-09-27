@@ -9,6 +9,7 @@ import ProductDetail from "./screens/ProductDetail";
 import AboutUsScreen from "./screens/AboutUsScreen";
 import { Provider as PaperProvider } from "react-native-paper"; // add this
 import ProductsPage from "./screens/ProductsPage";
+import Cart from "./screens/Cart";
 
 export default function App() {
   const [productId, setProductDetailId] = useState("");
@@ -47,6 +48,9 @@ export default function App() {
   }
   if (page === "products") {
     screen = <ProductsPage handleRouter={handleRouter} />;
+  }
+  if (page === "cart") {
+    screen = <Cart handleRouter={handleRouter} />;
   }
 
   if (productId !== "" && page === "productDetail") {

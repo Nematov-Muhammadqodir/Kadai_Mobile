@@ -61,14 +61,18 @@ export default function Logo({ handleRouter }) {
             </View>
           )}
         </View>
-        <View>
+        <Pressable
+          onPress={() => {
+            handleRouter("cart");
+          }}
+        >
           <Feather name="shopping-cart" size={24} color="black" />
           {cartItemsAmount > 0 && (
             <View style={styles.shoppingBadge}>
               <Text style={styles.badgeText}>{cartItemsAmount}</Text>
             </View>
           )}
-        </View>
+        </Pressable>
       </View>
     </View>
   );

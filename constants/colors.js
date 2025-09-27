@@ -10,5 +10,6 @@ const Colors = {
   discountRedColor: "#F00",
   nosRangKok: "#3C4701",
   skinColor: "#FFE8D2",
+  gray700: "#ECEFF2",
 };
 export default Colors;

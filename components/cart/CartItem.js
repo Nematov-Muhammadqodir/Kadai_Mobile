@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   mainContainer: {
     justifyContent: "space-between",
     flexDirection: "row",
-    borderWidth: 1,
+    borderBottomWidth: 1,
     padding: 10,
     borderColor: Colors.gray800,
     borderRadius: 5,

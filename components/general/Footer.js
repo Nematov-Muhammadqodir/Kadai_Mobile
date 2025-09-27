@@ -48,9 +48,7 @@ export default function Footer() {
           </View>
         </View>
       </View>
-      <View style={styles.border}>
-        <Text> </Text>
-      </View>
+      <View style={styles.border}></View>
 
       <View style={styles.addressMainContainer}>
         <Text style={styles.addressHeader}>Our Address</Text>

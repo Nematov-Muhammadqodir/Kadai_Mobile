@@ -8,6 +8,7 @@ import BlogsList from "../components/homePage/BlogsList";
 import CountdownTimer from "../components/general/CountDownTimer";
 import ProductsBigBanner from "../components/products/ProductsBigBanner";
 import SearchProductsBar from "../components/products/SearchProductsBar";
+import ProductList from "../components/products/ProductList";
 
 export default function ProductsPage({ handleRouter }) {
   const components = [
@@ -16,8 +17,9 @@ export default function ProductsPage({ handleRouter }) {
     <Logo key="logo" handleRouter={handleRouter} />,
     <Routes key="routes" handleRouter={handleRouter} />,
     <SmallAddBanner key="smallAdd" />,
-    <SearchProductsBar />,
     <ProductsBigBanner />,
+    <SearchProductsBar />,
+    <ProductList />,
     <BlogsList key="blogs" />,
     <Footer key="footer" />,
   ];

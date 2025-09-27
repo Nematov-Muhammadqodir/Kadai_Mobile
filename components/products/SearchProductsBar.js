@@ -34,7 +34,19 @@ export default function SearchProductsBar() {
             visible={isMenuOpen}
             onDismiss={() => setIsMenuOpen(false)}
             anchor={
-              <Pressable onPress={handleMenuOpen} style={styles.catergories}>
+              <Pressable
+                onPress={handleMenuOpen}
+                style={({ pressed }) => {
+                  return [
+                    styles.catergories,
+                    {
+                      backgroundColor: pressed
+                        ? Colors.gray800
+                        : Colors.darkYellow,
+                    },
+                  ];
+                }}
+              >
                 <FontAwesome6 name="bars-progress" size={14} color="black" />
                 <Text style={styles.categoryText}>Categories</Text>
               </Pressable>
@@ -110,7 +122,19 @@ export default function SearchProductsBar() {
             visible={isMenu2Open}
             onDismiss={() => setIsMenu2Open(false)}
             anchor={
-              <Pressable onPress={handleSortOpen} style={styles.sortBy}>
+              <Pressable
+                onPress={handleSortOpen}
+                style={({ pressed }) => {
+                  return [
+                    styles.sortBy,
+                    {
+                      backgroundColor: pressed
+                        ? Colors.gray800
+                        : Colors.darkYellow,
+                    },
+                  ];
+                }}
+              >
                 <FontAwesome5 name="sort-down" size={14} color="black" />
                 <Text style={styles.categoryText}>Sort</Text>
               </Pressable>
@@ -156,7 +180,7 @@ export default function SearchProductsBar() {
 }
 
 const styles = StyleSheet.create({
-  wrapper: { paddingHorizontal: 20, marginTop: 20 },
+  wrapper: { paddingHorizontal: 20, marginTop: 80 },
   mainContainer: {
     flexDirection: "row",
   },

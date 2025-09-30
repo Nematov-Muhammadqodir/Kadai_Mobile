@@ -5,6 +5,7 @@ import Routes from "../components/homePage/Routes";
 import Footer from "../components/general/Footer";
 import BlogsList from "../components/homePage/BlogsList";
 import FaqBanner from "../components/FAQ/faqBanner";
+import FAQList from "../components/FAQ/FAQList";
 
 export default function FAQ({ handleRouter }) {
   const components = [
@@ -12,6 +13,7 @@ export default function FAQ({ handleRouter }) {
     <Logo key="logo" handleRouter={handleRouter} />,
     <Routes key="routes" handleRouter={handleRouter} />,
     <FaqBanner key="FaqBanner" />,
+    <FAQList key={"FAQList"} />,
     <BlogsList key="blogs" />,
     <Footer key="footer" />,
   ];

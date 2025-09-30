@@ -19,7 +19,7 @@ import BrandSwiper from "../components/AboutUs/BrandSwiper";
 export default function AboutUsScreen({ handleRouter }) {
   const components = [
     <SaleSmallBanner key="sale" />,
-    <Logo key="logo" />,
+    <Logo key="logo" handleRouter={handleRouter} />,
     <Routes key="routes" handleRouter={handleRouter} />,
     <SmallAddBanner key="smallAdd" />,
     <SmallAboutUsBanner key={"SmallAboutUsBanner"} />,

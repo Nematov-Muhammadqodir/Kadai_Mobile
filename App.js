@@ -10,6 +10,7 @@ import AboutUsScreen from "./screens/AboutUsScreen";
 import { Provider as PaperProvider } from "react-native-paper"; // add this
 import ProductsPage from "./screens/ProductsPage";
 import Cart from "./screens/Cart";
+import FAQ from "./screens/FAQ";
 
 export default function App() {
   const [productId, setProductDetailId] = useState("");
@@ -51,6 +52,9 @@ export default function App() {
   }
   if (page === "cart") {
     screen = <Cart handleRouter={handleRouter} />;
+  }
+  if (page === "faq") {
+    screen = <FAQ handleRouter={handleRouter} />;
   }
 
   if (productId !== "" && page === "productDetail") {

@@ -1,8 +1,14 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import React, { useState } from "react";
 import FAQItem from "./FAQItem";
+import FAQRouter from "./FAQRouter";
 
 export default function FAQList() {
+  const [section, setSection] = useState("payment");
+
+  const handleFAQSectionState = (state) => {
+    setSection(state);
+  };
   const faqList = [
     {
       key: 1,
@@ -59,7 +65,12 @@ export default function FAQList() {
   ];
 
   return (
-    <View>
+    <View style={styles.wrapper}>
+      <Text style={styles.text}>FAQ</Text>
+      <FAQRouter
+        handleFAQSectionState={handleFAQSectionState}
+        section={section}
+      />
       {faqList.map((faq) => {
         return (
           <FAQItem question={faq.question} answer={faq.answer} key={faq.key} />
@@ -68,3 +79,16 @@ export default function FAQList() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  wrapper: {
+    marginTop: 30,
+  },
+  text: {
+    alignSelf: "center",
+    fontSize: 20,
+    letterSpacing: 2,
+    fontFamily: "open-sans-bold",
+    borderBottomWidth: 2,
+  },
+});

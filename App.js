@@ -11,6 +11,8 @@ import { Provider as PaperProvider } from "react-native-paper"; // add this
 import ProductsPage from "./screens/ProductsPage";
 import Cart from "./screens/Cart";
 import FAQ from "./screens/FAQ";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 export default function App() {
   const [productId, setProductDetailId] = useState("");
@@ -72,7 +74,7 @@ export default function App() {
           style={styles.rootScreen}
           edges={["top", "left", "right"]}
         >
-          {screen}
+          <Provider store={store}>{screen}</Provider>
         </SafeAreaView>
       </PaperProvider>
     </SafeAreaProvider>

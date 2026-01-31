@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { StyleSheet } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import AppLoading from "expo-app-loading";
 import { useFonts } from "expo-font";
 import { Provider as PaperProvider } from "react-native-paper";
 import { Provider as ReduxProvider } from "react-redux";
-import { ApolloProvider } from "@apollo/client";
-
 import { store } from "./store";
-import { useApollo } from "./apollo/client";
-
 // Screens
 import HomePageScreen from "./screens/HomePageScreen";
 import ProductDetail from "./screens/ProductDetail";
@@ -17,14 +13,43 @@ import AboutUsScreen from "./screens/AboutUsScreen";
 import ProductsPage from "./screens/ProductsPage";
 import Cart from "./screens/Cart";
 import FAQ from "./screens/FAQ";
+import { GraphQLWsLink } from "@apollo/client/link/subscriptions";
+import { createClient } from "graphql-ws";
+import { HttpLink } from "@apollo/client";
+import { split } from "@apollo/client";
+import { getMainDefinition } from "@apollo/client/utilities";
+import { InMemoryCache } from "@apollo/client";
+import { NEXT_PUBLIC_API_GRAPHQL_URL } from "@env";
 
 export default function App() {
+  //^ Initialize Apollo Client
+  const wsLink = new GraphQLWsLink(
+    createClient({ url: "wss://api.kadai.uz/graphql" })
+  );
+
+  const httpLink = new HttpLink({
+    uri: NEXT_PUBLIC_API_GRAPHQL_URL,
+  });
+
+  const splitLink = split(
+    ({ query }) => {
+      const definition = getMainDefinition(query);
+      return (
+        definition.kind === "OperationDefinition" &&
+        definition.operation === "subscription"
+      );
+    },
+    wsLink,
+    httpLink
+  );
+
   // Initialize Apollo Client
-  const client = useApollo();
+  // const client = useApollo();
 
   // Local navigation state
   const [page, setPage] = useState("home");
   const [productId, setProductId] = useState("");
+  console.log("Current Page:", page);
 
   // Load fonts
   const [fontsLoaded] = useFonts({

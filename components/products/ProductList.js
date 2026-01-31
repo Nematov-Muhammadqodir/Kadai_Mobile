@@ -1,6 +1,8 @@
 import { View, StyleSheet, Text, ScrollView } from "react-native";
 import Colors from "../../constants/colors";
 import NewProductCard from "../homePage/NewProductCard";
+import { useEffect, useState } from "react";
+import { getProducts } from "../../libs/api/productService";
 
 export default function ProductList() {
   const DATA = [
@@ -60,8 +62,17 @@ export default function ProductList() {
       discountAmount: 11,
     },
   ];
-
   const rows = [];
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getProducts()
+      .then((data) => {
+        console.log("dataaaaa", data);
+        setProducts(data);
+      })
+      .catch((err) => console.error(err));
+  }, []);
   for (let i = 0; i < DATA.length; i += 2) {
     rows.push(DATA.slice(i, i + 2));
   }
@@ -73,9 +84,9 @@ export default function ProductList() {
           contentContainerStyle={styles.scrollContent}
           showsVerticalScrollIndicator={true}
         >
-          {rows.map((rowItems, rowIndex) => (
+          {products.map((rowItems, rowIndex) => (
             <View key={rowIndex} style={styles.row}>
-              {rowItems.map((item) => (
+              {products.map((item) => (
                 <NewProductCard item={item} />
               ))}
             </View>

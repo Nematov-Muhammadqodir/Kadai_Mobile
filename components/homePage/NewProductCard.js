@@ -4,20 +4,22 @@ import AddToCartRounded from "../general/AddToCardRounded";
 
 export default function NewProductCard({ item }) {
   return (
-    <View key={item.name} style={styles.mainContainer}>
+    <View key={item.id} style={styles.mainContainer}>
       <View style={styles.imageContainer}>
         <Image
-          source={require("../../assets/images/products/grape_PhotoGrid-min.png")}
+          source={{
+            uri: `data:${item.imageType};base64,${item.imageData}`,
+          }}
           style={styles.image}
         />
       </View>
       <View>
-        <Text style={styles.name}>{item.name}</Text>
-        <Text style={styles.description}>{item.desc}</Text>
+        <Text style={styles.name}>{item.productName}</Text>
+        <Text style={styles.description}>{item.productDescription}</Text>
         <View style={styles.priceContainer}>
-          <Text style={styles.price}>₩{item.price}</Text>
+          <Text style={styles.price}>₩{item.productPrice}</Text>
           <View style={styles.discountContainer}>
-            <Text style={styles.discountAmount}>-{item.discountAmount}%</Text>
+            <Text style={styles.discountAmount}>-10%</Text>
           </View>
         </View>
       </View>

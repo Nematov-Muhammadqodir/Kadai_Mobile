@@ -11,7 +11,7 @@ export default function AddToCartBtn() {
       ]}
       onPress={() => console.log("Added to cart!")}
     >
-      <SimpleLineIcons name="basket" size={20} color="black" />;
+      <SimpleLineIcons name="basket" size={20} color="black" />
       <Text>Add To Cart</Text>
     </Pressable>
   );

@@ -44,6 +44,6 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 12,
     fontFamily: "open-sans",
-    fontWeight: 500,
+    fontWeight: "500",
   },
 });

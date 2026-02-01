@@ -68,7 +68,6 @@ export default function ProductList() {
   useEffect(() => {
     getProducts()
       .then((data) => {
-        console.log("dataaaaa", data);
         setProducts(data);
       })
       .catch((err) => console.error(err));

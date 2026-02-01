@@ -39,7 +39,7 @@ export default function Routes({ handleRouter }) {
             },
             styles.wrapperCustom,
           ]}
-          onPress={() => handleRouter("chat")}
+          onPress={() => handleRouter("myPage")}
         >
           <Text>MyPage</Text>
         </Pressable>

@@ -18,7 +18,7 @@ export default function Categories() {
       <Text style={styles.mainText}>Category</Text>
       <View style={styles.categoriesList}>
         {categories.map(({ id, name, icon }) => {
-          return <CategoryCard id={id} name={name} icon={icon} />;
+          return <CategoryCard id={id} name={name} icon={icon} key={id} />;
         })}
       </View>
     </View>

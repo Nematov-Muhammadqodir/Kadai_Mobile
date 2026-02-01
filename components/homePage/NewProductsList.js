@@ -77,8 +77,8 @@ export default function NewProductsList() {
         >
           {rows.map((rowItems, rowIndex) => (
             <View key={rowIndex} style={styles.row}>
-              {rowItems.map((item) => (
-                <NewProductCard item={item} />
+              {rowItems.map((item, id) => (
+                <NewProductCard item={item} key={id} />
               ))}
             </View>
           ))}

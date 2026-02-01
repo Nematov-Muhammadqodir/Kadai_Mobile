@@ -38,7 +38,6 @@ export default function Footer() {
         </View>
         <View>
           <Text style={styles.linkHeader}>Useful Links</Text>
-          Immune Revival Performance Bundles Accessories Shop All
           <View style={styles.linksList}>
             <Text style={styles.text}> Immune Revival</Text>
             <Text style={styles.text}>Performance</Text>

@@ -26,8 +26,8 @@ export default function BlogsList() {
       <View>
         <FlatList
           data={blogsData}
-          renderItem={({ item }) => (
-            <BlogItem date={item.date} content={item.text} />
+          renderItem={({ item, id }) => (
+            <BlogItem date={item.date} content={item.text} key={id} />
           )}
         />
       </View>

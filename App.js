@@ -22,29 +22,9 @@ import { InMemoryCache } from "@apollo/client";
 import { NEXT_PUBLIC_API_GRAPHQL_URL } from "@env";
 
 export default function App() {
-  //^ Initialize Apollo Client
-  const wsLink = new GraphQLWsLink(
-    createClient({ url: "wss://api.kadai.uz/graphql" })
-  );
-
   const httpLink = new HttpLink({
     uri: NEXT_PUBLIC_API_GRAPHQL_URL,
   });
-
-  const splitLink = split(
-    ({ query }) => {
-      const definition = getMainDefinition(query);
-      return (
-        definition.kind === "OperationDefinition" &&
-        definition.operation === "subscription"
-      );
-    },
-    wsLink,
-    httpLink
-  );
-
-  // Initialize Apollo Client
-  // const client = useApollo();
 
   // Local navigation state
   const [page, setPage] = useState("home");

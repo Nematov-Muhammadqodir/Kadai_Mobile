@@ -2,57 +2,53 @@ import { Image, Text, View, StyleSheet, Pressable } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Feather from "@expo/vector-icons/Feather";
 import { useState } from "react";
-import { Button } from "react-native-paper";
 import { Menu } from "react-native-paper";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 
 export default function Logo({ handleRouter }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [wishList, setWishList] = useState(3);
-  const [cartItemsAmount, setCartItemsAmount] = useState(7);
+  const [wishList] = useState(3);
+  const [cartItemsAmount] = useState(7);
 
-  const handleMenuOpen = () => {
-    isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true);
-  };
   return (
     <View style={styles.mainContainer}>
-      <View>
-        <Image source={require("../../assets/images/general/kadai.png")} />
-      </View>
+      <Image source={require("../../assets/images/general/kadai.png")} />
+
       <View style={styles.logoContainer}>
-        <View>
-          <Menu
-            visible={isMenuOpen}
-            onDismiss={() => setIsMenuOpen(false)}
-            anchor={
-              <Pressable onPress={handleMenuOpen}>
-                <FontAwesome name="user-circle-o" size={24} color="black" />
-              </Pressable>
-            }
-          >
-            <Menu.Item
-              onPress={() => {}}
-              title={
-                <View style={styles.logoutContainer}>
-                  <AntDesign name="logout" size={24} color="black" />
-                  <Text>Logout</Text>
-                </View>
-              }
-            />
-            <Menu.Item
-              onPress={() => {
-                handleRouter("myPage");
-              }}
-              title={
-                <View style={styles.myPageContainer}>
-                  <FontAwesome6 name="users-gear" size={24} color="black" />
-                  <Text>My Page</Text>
-                </View>
-              }
-            />
-          </Menu>
-        </View>
+        {/* USER MENU */}
+        <Menu
+          visible={isMenuOpen}
+          onDismiss={() => setIsMenuOpen(false)}
+          anchor={
+            <Pressable onPress={() => setIsMenuOpen(true)}>
+              <FontAwesome name="user-circle-o" size={24} color="black" />
+            </Pressable>
+          }
+        >
+          <Menu.Item
+            onPress={() => {
+              setIsMenuOpen(false);
+            }}
+            title="Logout"
+            leadingIcon={() => (
+              <AntDesign name="logout" size={20} color="black" />
+            )}
+          />
+
+          <Menu.Item
+            onPress={() => {
+              setIsMenuOpen(false);
+              handleRouter("myPage");
+            }}
+            title="My Page"
+            leadingIcon={() => (
+              <FontAwesome6 name="users-gear" size={20} color="black" />
+            )}
+          />
+        </Menu>
+
+        {/* WISHLIST */}
         <View style={styles.likeContainer}>
           <Feather name="heart" size={24} color="black" />
           {wishList > 0 && (
@@ -61,11 +57,9 @@ export default function Logo({ handleRouter }) {
             </View>
           )}
         </View>
-        <Pressable
-          onPress={() => {
-            handleRouter("cart");
-          }}
-        >
+
+        {/* CART */}
+        <Pressable onPress={() => handleRouter("cart")}>
           <Feather name="shopping-cart" size={24} color="black" />
           {cartItemsAmount > 0 && (
             <View style={styles.shoppingBadge}>

@@ -12,29 +12,33 @@ import BlogsList from "../components/homePage/BlogsList";
 import NewProductsList from "../components/homePage/NewProductsList";
 
 export default function HomePageScreen({ handleProductDetail, handleRouter }) {
-  const components = [
-    <SaleSmallBanner key="sale" />,
-    <Logo key="logo" handleRouter={handleRouter} />,
-    <SearchInput key="search" />,
-    <Routes key="routes" handleRouter={handleRouter} />,
-    <SmallAddBanner key="smallAdd" />,
-    <BigBanner key="big" />,
-    <Categories key="categories" />,
-    <DiscountProductsList
-      key="discountProductsList"
-      handleProductDetail={handleProductDetail}
-    />,
-    <NewProductsList key="newProductsList" />,
-    <BlogsList key="blogs" />,
-    <Footer key="footer" />,
+  const sections = [
+    { id: "sale", component: SaleSmallBanner },
+    { id: "logo", component: () => <Logo handleRouter={handleRouter} /> },
+    { id: "search", component: SearchInput },
+    { id: "routes", component: () => <Routes handleRouter={handleRouter} /> },
+    { id: "smallAdd", component: SmallAddBanner },
+    { id: "big", component: BigBanner },
+    { id: "categories", component: Categories },
+    {
+      id: "discountProductsList",
+      component: () => (
+        <DiscountProductsList handleProductDetail={handleProductDetail} />
+      ),
+    },
+    { id: "newProductsList", component: NewProductsList },
+    { id: "blogs", component: BlogsList },
+    { id: "footer", component: Footer },
   ];
 
   return (
     <FlatList
-      data={components}
-      renderItem={({ item }) => <View>{item}</View>}
-      keyExtractor={(_, index) => index.toString()}
-      contentContainerStyle={styles.container}
+      data={sections}
+      keyExtractor={(item) => item.id}
+      renderItem={({ item }) => {
+        const Component = item.component;
+        return <Component />;
+      }}
     />
   );
 }
